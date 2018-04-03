@@ -1,0 +1,121 @@
+@font-face {
+	font-family: 'Open Sans';
+	src: url(OpenSans-Regular.ttf);
+}
+@font-face {
+	font-family: 'Open Sans';
+	src: url(OpenSans-Bold.ttf);
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'Open Sans';
+	src: url(OpenSans-Italic.ttf);
+	font-style: italic;
+}
+
+body {
+	font-family: Open Sans;
+}
+
+h1 {
+	font-size: 26px;
+}
+
+#content {
+	max-width: 800px;
+	margin: 0px auto;
+}
+
+#menu, #footermenu {
+	text-align: center;
+	list-style-type: none;
+	display: block;
+}
+
+#menu li, #footermenu li {
+	display: inline;
+}
+
+#menu li {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+#footermenu li {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#menu {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#cupidonor {
+	margin: 0px auto;
+	width: 50%;
+}
+
+#cupidonor img {
+	width: 100%;
+}
+
+.btn {
+	display: block;
+	width: 50%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	font-size: 22px;
+	background: #FF3C3C;
+	color: #FFF;
+	font-weight: bold;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+#footer {
+	padding-top: 20px;
+}
+
+li::before {
+	background-color: #FF3C3C;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #FF3C3C;
+}
+
+p {
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+.center {
+	text-align: center;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.space {
+	padding: 20px;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+.active {
+	color: #FF3C3C;
+}
