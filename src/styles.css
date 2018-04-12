@@ -92,7 +92,7 @@ p {
 	padding-left: 40px;
 	padding-right: 40px;
 	font-size: 22px;
-	background: #FF3C3C;
+	background: #EC2027;
 	color: #FFF;
 	font-weight: bold;
 	-webkit-border-radius: 2px;
@@ -100,11 +100,12 @@ p {
 	border-radius: 2px;
 	margin: 0px auto;
 	text-align: center;
+	cursor: pointer;
 }
 
 a.btn:hover {
 	color: #FFF;
-	background-color: #FF5C5C;
+	background-color: #D52520;
 }
 
 #footer {
@@ -112,12 +113,12 @@ a.btn:hover {
 }
 
 a {
-	color: #FF3C3C;
+	color: #EC2027;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #FF3C3C;
+	color: #EC2027;
 }
 
 .center {
@@ -137,5 +138,18 @@ a:hover {
 }
 
 #menu a.active, #footermenu a.active {
-	color: #FF3C3C;
+	color: #EC2027;
+}
+
+#doneerform input,
+#doneerform select {
+	font-size: 16px;
+	background: white;
+    border: 1px solid #E0E0E0;
+    padding: 10px 20px;
+}
+
+#doneerform input[type="submit"] {
+	color: white;
+	background: #EC2027;
 }

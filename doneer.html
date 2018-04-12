@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teken nu voor een referendum over de Donorwet!</title>
+	<link rel="stylesheet" type="text/css" href="src/styles.css">
+	<meta charset="UTF-8">
+</head>
+<body>
+    <div id="content">
+        <div id="header" >
+            <div id="hvd-logo"><img src="src/hvd-logo.jpg" alt"Hart voor Democratie" /></div>
+            <ul id="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="https://referendum.nl/#/voorwaarden">Teken</a></li>
+				<li><a href="/doneer.html" class="active">Doneer</a></li>
+                <li><a href="/over.html">Over</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+            </ul>
+        </div>
+
+        <h1>Doneer aan Hart voor Democratie / GeenPeil</h1>
+
+        <p>GeenPeil zorgt voor de backbone van het initiatief voor het donorwet-referendum. Dus de teken-app, beveiligde servers, versleutelde infrastructuur, veilige hosting en natuurlijk de dappere nerds die het allemaal soepel, waterdicht & privacy-veilig houden. En dan hebben we het nog niet eens over de kosten van het printen van alle handtekeningen, wat alleen al zo’n 15.000 euro zal kosten. Kortom: we hebben geld nodig.</p>
+        <p>Stichting GeenPeil heeft geen vaste inkomsten. We bestaan bij de gratie van donaties. Wil je helpen? Awesome! Je kan doneren via iDeal of PayPal, per creditcard en zelfs met Bitcoins. Rechtstreeks mag ook, op NL59INGB0007179771 ten name van Stichting GeenPeil, Amsterdam. Dikke dankjewel!</p>
+
+        <form action="https://geenpeil.nl/doneer-aan-geenpeil-nl/" class="" method="post" _lpchecked="1" id="doneerform" >
+
+            <input type="hidden" name="dmm_recurring_interval" value="one">
+            <p>
+                Naam
+                <span style="color:red;">*</span>
+                <br>
+                <input type="text" name="dmm_name" class="" value="" style="width: 100%;">
+            </p>
+            <p>
+                E-mailadres
+                <span style="color:red;">*</span>
+                <br>
+                <input type="text" name="dmm_email" class="" value="" style="width: 100%">
+            </p>
+            <p>
+                Bedrag €
+                <span style="color:red;">*</span>
+                <br>
+                <select id="dmm_dd" style="width: 100%" class="" onchange="if(this.value!='--'){document.getElementById('dmm_amount').value=this.value;document.getElementById('dmm_amount').style.display = 'none';}else{document.getElementById('dmm_amount').style.display = 'block';}">
+                    <option value="--">Eigen bedrag invoeren</option>
+                    <option value="5,00">€ 5,00</option>
+                    <option value="15,00">€ 15,00</option>
+                    <option value="25,00">€ 25,00</option>
+                    <option value="50,00">€ 50,00</option>
+                    <option value="100,00">€ 100,00</option>
+                </select>
+                <input type="text" id="dmm_amount" name="dmm_amount" class="" value="" style="width: 100%">
+            </p>
+            <label class="dmm_dd">
+                <input type="radio" name="dmm_method" value="ideal" checked="">
+                <img style="vertical-align:middle;display:inline-block" src="https://www.mollie.com/images/payscreen/methods/ideal.png"> iDEAL
+                <br>
+            </label>
+            <label class="dmm_cc">
+                <input type="radio" name="dmm_method" value="creditcard">
+                <img style="vertical-align:middle;display:inline-block" src="https://www.mollie.com/images/payscreen/methods/creditcard.png"> Credit card
+                <br>
+            </label>
+            <label class="dmm_recurring">
+                <input type="radio" name="dmm_method" value="banktransfer">
+                <img style="vertical-align:middle;display:inline-block" src="https://www.mollie.com/images/payscreen/methods/banktransfer.png"> Overboeking
+                <br>
+            </label>
+            <label class="dmm_recurring">
+                <input type="radio" name="dmm_method" value="paypal">
+                <img style="vertical-align:middle;display:inline-block" src="https://www.mollie.com/images/payscreen/methods/paypal.png"> PayPal
+                <br>
+            </label>
+            <label class="dmm_recurring">
+                <input type="radio" name="dmm_method" value="bitcoin">
+                <img style="vertical-align:middle;display:inline-block" src="https://www.mollie.com/images/payscreen/methods/bitcoin.png"> Bitcoin
+                <br>
+            </label>
+            <br>
+            <script>
+                window.onload = function () {
+                    var dmm_dd = document.getElementById('dmm_dd');
+                    if (dmm_dd !== null) {
+                        if (dmm_dd.value !== '--') {
+                            document.getElementById('dmm_amount').value = document.getElementById('dmm_dd').value;
+                            document.getElementById('dmm_amount').style.display = 'none';
+                        }
+                    }
+                }
+            </script>
+            <label id="dmm_permission" style="display:none">
+                <input type="checkbox" name="dmm_permission">
+                Hierbij machtig ik om het bovenstaande bedrag periodiek van mijn rekeningnummer af te schrijven.
+            </label>
+            <input type="submit" name="dmm_submitted" class="btn" value="Doneren">
+        </form>
+
+
+        <div id="footer" class="center">
+            <ul id="footermenu">
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="https://zoek.officielebekendmakingen.nl/kst-33506-A.html">De wetswijziging</a></li>
+                <li><a href="/over.html">Over Hart voor Democratie</a></li>
+                <li><a href="/privacy.html">Privacyverklaring</a></li>
+                <li><a href="/doneer.html">Doneren</a></li>
+            </ul>
+            <div class="center italic">
+                <p>Hart voor Democratie is powered by GeenPeil</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://matomo.hartvoordemocratie.nl/piwik.js" async defer></script>
+    <script src="https://hartvoordemocratie.nl/tracking.js"></script>
+</body>
+</html>
