@@ -17,6 +17,8 @@
 		fbq('init', '1923533084375339');
 		fbq('track', 'PageView');
 	</script>
+	<script src="src/raphael-2.1.4.min.js"></script>
+	<script src="src/justgage.js"></script>
 	<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1923533084375339&ev=PageView&noscript=1"/></noscript>
 
 </head>
@@ -37,8 +39,10 @@
 		<h1>TEKEN NU VOOR EEN REFERENDUM OVER DE DONORWET</h1>
 		<p>Het kan nog. Dus we gaan er voor: een referendum over de nieuwe donorwet!</p>
 		<p>Tot 14 juni 2018 kan er getekend worden voor een referendum over de donorwet. Dat kan online via onze waterdichte tekenapplicatie. Wil je een referendum? Hieronder kun je direct online tekenen. Let op: maximaal 1 verzoek per kiesgerechtigde.</p>
+
 		<div class="center space">
-			<p><a href="https://referendum.nl/#/voorwaarden" class="btn">Teken nu!</a></p>
+			<div id="gauge" ></div>
+			<p><a href="https://referendum.nl/#/voorwaarden" class="btn" id="tekenNu">Teken nu!</a></p>
 		</div>
 		
 		<h2>Waarom een referendum?</h2>
@@ -67,6 +71,31 @@
 	</div>
 	<script src="https://matomo.hartvoordemocratie.nl/piwik.js" async defer></script>
 	<script src="https://hartvoordemocratie.nl/tracking.js"></script>
+	<script>
+		var gaugeElem = document.getElementById("gauge");
+		console.log(gaugeElem.style);
+		gaugeElem.style.height = (gaugeElem.offsetWidth*0.5)+"px";
+		gaugeElem.style.marginTop = "-" + (gaugeElem.offsetWidth*0.15)+"px";
+		var xmlhttp = new XMLHttpRequest();
+		var url = "https://referendum.nl/cupido/api/total";
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var resp = JSON.parse(this.responseText);
+				console.dir(resp);
+				var g = new JustGage({
+					id: "gauge",
+					value: resp["total"],
+					min: 0,
+					max: 300000,
+					// title: "Handtekeningen",
+					levelColorsGradient: false,
+					levelColors: ["#EC2027"]
+				});
+			}
+		};
+		xmlhttp.open("GET", url, true);
+		xmlhttp.send();
+	</script>
 </body>
 </html>
 	

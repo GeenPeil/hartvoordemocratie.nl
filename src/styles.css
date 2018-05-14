@@ -153,3 +153,7 @@ a:hover {
 	color: white;
 	background: #EC2027;
 }
+
+#gauge {
+	max-width: 800px;
+}
