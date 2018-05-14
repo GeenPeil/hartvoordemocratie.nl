@@ -41,7 +41,7 @@
 		<p>Tot 14 juni 2018 kan er getekend worden voor een referendum over de donorwet. Dat kan online via onze waterdichte tekenapplicatie. Wil je een referendum? Hieronder kun je direct online tekenen. Let op: maximaal 1 verzoek per kiesgerechtigde.</p>
 
 		<div class="center space">
-			<div id="gauge" ></div>
+			<div id="gauge"></div>
 			<p><a href="https://referendum.nl/#/voorwaarden" class="btn" id="tekenNu">Teken nu!</a></p>
 		</div>
 		
@@ -72,10 +72,6 @@
 	<script src="https://matomo.hartvoordemocratie.nl/piwik.js" async defer></script>
 	<script src="https://hartvoordemocratie.nl/tracking.js"></script>
 	<script>
-		var gaugeElem = document.getElementById("gauge");
-		console.log(gaugeElem.style);
-		gaugeElem.style.height = (gaugeElem.offsetWidth*0.5)+"px";
-		gaugeElem.style.marginTop = "-" + (gaugeElem.offsetWidth*0.15)+"px";
 		var xmlhttp = new XMLHttpRequest();
 		var url = "https://referendum.nl/cupido/api/total";
 		xmlhttp.onreadystatechange = function() {
@@ -91,6 +87,13 @@
 					levelColorsGradient: false,
 					levelColors: ["#EC2027"]
 				});
+
+				var gauge = document.querySelector("#gauge");
+				var svg = document.querySelector("#gauge svg");
+				var width = gauge.offsetWidth;
+				var height = gauge.offsetHeight;
+				svg.setAttribute("style","");
+				svg.setAttribute("viewBox","0 "+(height*(1/12))+" "+width+" "+height);
 			}
 		};
 		xmlhttp.open("GET", url, true);
