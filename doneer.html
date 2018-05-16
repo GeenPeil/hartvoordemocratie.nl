@@ -109,7 +109,12 @@
                 <input type="checkbox" name="dmm_permission">
                 Hierbij machtig ik om het bovenstaande bedrag periodiek van mijn rekeningnummer af te schrijven.
             </label>
-            <input type="submit" name="dmm_submitted" class="btn" value="Doneren">
+            <input type="submit" name="dmm_submitted" class="btn" value="Doneren" onclick="tp()">
+            <script>
+                function tp() {
+                    fbq('track', 'Purchase', {value: document.getElementById('dmm_amount').value.replace(',', '.'), currency: 'EUR'});
+                }
+            </script>
         </form>
 
 
