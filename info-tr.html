@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teken nu voor een referendum over de Donorwet!</title>
+	<link rel="stylesheet" type="text/css" href="src/styles.css">
+	<meta charset="UTF-8">
+
+	<script>
+		!function(f,b,e,v,n,t,s)
+		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];
+		s.parentNode.insertBefore(t,s)}(window, document,'script',
+		'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '1923533084375339');
+		fbq('track', 'PageView');
+	</script>
+	<script src="src/raphael-2.1.4.min.js"></script>
+	<script src="src/justgage.js"></script>
+	<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1923533084375339&ev=PageView&noscript=1"/></noscript>
+
+</head>
+<body>
+	<div id="content">
+		<div id="header" >
+			<div id="hvd-logo"><img src="src/hvd-logo.jpg" alt"Hart voor Democratie" /></div>
+			<ul id="menu">
+				<li><a href="/" class="active">Home</a></li>
+				<li><a href="https://referendum.nl/#/voorwaarden">Teken</a></li>
+				<li><a href="/doneer.html">Doneer</a></li>
+				<li><a href="/over.html">Over</a></li>
+				<li><a href="/faq.html">FAQ</a></li>
+			</ul>
+		</div>
+
+		<h1>Hollandalı Türklere önemli bir duyuru!</h1>
+		<p>Değerli Hollanda Türkleri, gerçekten biliyoruz: siz hep gururlu Türk kalacaksınız. Her zaman, her yerde Türkiye ilk sırada. Ama burada, Hollanda’da, da demokraside sesinizi duyurabilirsiniz. Organ Bağışı Yasası’yla ilgili bir şey paylaşabilir miyiz?</p>
+		<p>Belki bilmiyorsundur, ama 2020 yılında organ bağışıyla ilgili yeni bir yasa çıkacak. Sözkonusu yasayla Organ Bağışı Kayıt Sistemi’nde seçimini belirtmemiş olan her seçme ve seçilme hakkı olan Hollandalı, doğrudan organlarının bağışına karşı gelmeyen organ bağışçı olarak yazılacak. Bu yasa, seçmenlerle geniş bir toplumsal tartışma yapılmadan, mecliste çok küçük bir çoğunlukla yürürlüğe geçirildi.</p>
+		<p>Devletin, seçmenlerden izin almayarak herkesi doğrudan organ bağışçı yapmasına karşı gelerek bu yeni yasayla ilgili bir halk oylaması düzenlemeye çalışıyoruz. Sen de mi devletçe doğrudan organ bağışına karşı bir halk oylaması istiyorsun? O zaman Referandum.nl sitesine imzanı bırakıp ailen ve mümkün olduğu kadar çok arkadaşla meslektaşlarının da Referandum.nl sitesinde imza bırakmaları için çağrı yap. Her zaman, her yerde kendi bedenin ilk sırada!</p>
+		
+		<div class="center space">
+			<p><a href="https://referendum.nl/#/voorwaarden" class="btn" id="tekenNu">Formu hemen doldur!</a></p>
+			<div id="gauge"></div>
+		</div>
+
+        <div id="footer" class="center">
+			<ul id="footermenu">
+				<li><a href="/faq.html">FAQ</a></li>
+				<li><a href="https://zoek.officielebekendmakingen.nl/kst-33506-A.html">De wetswijziging</a></li>
+				<li><a href="/over.html">Over Hart voor Democratie</a></li>
+				<li><a href="/privacy.html">Privacyverklaring</a></li>
+				<li><a href="/doneer.html">Doneren</a></li>
+			</ul>
+			<div class="center italic">
+				<p>Hart voor Democratie is powered by GeenPeil</p>
+			</div>
+		</div>
+	</div>
+	<script src="https://matomo.hartvoordemocratie.nl/piwik.js" async defer></script>
+	<script src="https://hartvoordemocratie.nl/tracking.js"></script>
+	<script>
+		var xmlhttp = new XMLHttpRequest();
+		var url = "https://referendum.nl/cupido/api/total";
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var resp = JSON.parse(this.responseText);
+				console.dir(resp);
+				var g = new JustGage({
+					id: "gauge",
+					value: resp["total"],
+					min: 0,
+					max: 300000,
+					// title: "Handtekeningen",
+					levelColorsGradient: false,
+					levelColors: ["#EC2027"]
+				});
+
+				var gauge = document.querySelector("#gauge");
+				var svg = document.querySelector("#gauge svg");
+				var width = gauge.offsetWidth;
+				var height = gauge.offsetHeight;
+				svg.setAttribute("style","");
+				svg.setAttribute("viewBox","0 "+(height*(1/12))+" "+width+" "+height);
+			}
+		};
+		xmlhttp.open("GET", url, true);
+		xmlhttp.send();
+	</script>
+</body>
+</html>
+	
